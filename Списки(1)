@@ -1,0 +1,29 @@
+def vertDiagr(x):
+    xmax=max(x)
+    l=len(x)
+    scr=[]
+    for h in range(xmax):
+        row=[]
+        for i in range(l):
+            row+=[0]
+        scr+=[row]
+    for h in range(xmax):
+        for i in range(l):
+            if x[i] >= (h+1):
+                scr[h][i]=1
+    scr.reverse()
+    return scr
+    
+def printDiagr(scr):
+    for r in scr:
+        row=''
+        for a in r:
+            if a==1:
+                row+='*'
+            else:
+                row+=' '
+        print(row)
+        
+ 
+scr=vertDiagr([3,5,2,1,2,6,1])
+printDiagr(scr)
