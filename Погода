@@ -1,0 +1,24 @@
+now = input()
+ 
+if now == 'ясно':
+    yasno = 1
+    pasmurno = 0
+else:
+    yasno = 0
+    pasmurno = 1
+p = float(input())
+q = float(input())
+count = int(input())
+ 
+for i in range(count):
+    yasno, pasmurno = (max(yasno * p, pasmurno * (1 - q)),
+                       max(pasmurno * q, yasno * (1 - p)))
+if yasno > pasmurno:
+    print('ясно')
+    print(yasno)
+elif pasmurno > yasno:
+    print('пасмурно')
+    print(pasmurno)
+else:
+    print('равновероятно')
+    print(yasno)
